@@ -12,8 +12,16 @@ class AIRENGINEERTEST_API URobotInstruction : public UObject
 	GENERATED_BODY()
 
 public:
-	URobotInstruction();	
+	URobotInstruction();
 
 	UFUNCTION(BlueprintCallable)
 		bool ExecuteInstruction();
+protected:
+	class ARobot* mRobot;
+
+	UFUNCTION(BlueprintCallable)
+	ARobot* getRobot() { return mRobot; }
+
+	UFUNCTION(BlueprintCallable)
+	void setRobot(ARobot* robot) { mRobot = robot; }
 };
