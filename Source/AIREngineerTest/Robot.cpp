@@ -10,16 +10,17 @@ ARobot::ARobot()
 	PrimaryActorTick.bCanEverTick = true;
 }
 
-ARobot::ARobot(TArray<RobotInstruction*> instructions)
-	:mInstructions(instructions)
-{
-}
 
 // Called when the game starts or when spawned
 void ARobot::BeginPlay()
 {
 	Super::BeginPlay();
-	
+}
+
+void ARobot::AssignDelegate(FInstructionDelegate instruction)
+{
+	wait = instruction;
+	wait.ExecuteIfBound(3.0f);
 }
 
 // Called every frame

@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "RobotInstruction.generated.h"
-
+class ARobot;
 /*  */
 UCLASS(Blueprintable)
 class AIRENGINEERTEST_API URobotInstruction : public UObject
@@ -13,12 +13,14 @@ class AIRENGINEERTEST_API URobotInstruction : public UObject
 
 public:
 	URobotInstruction();
-
 	UFUNCTION(BlueprintCallable)
-		bool ExecuteInstruction();
-protected:
-	class ARobot* mRobot;
+	virtual bool ExecuteInstruction();
 
+	UFUNCTION(BlueprintImplementableEvent)
+	bool BP_ExecuteInstruction();
+protected:
+	ARobot* mRobot;
+	
 	UFUNCTION(BlueprintCallable)
 	ARobot* getRobot() { return mRobot; }
 

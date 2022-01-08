@@ -14,7 +14,6 @@ class AIRENGINEERTEST_API UMoveInstruction : public URobotInstruction
 {
 	GENERATED_BODY()
 public:
-	UFUNCTION(BlueprintCallable)
-	void moveForward();
+	virtual bool ExecuteInstruction() override;
 	
 };

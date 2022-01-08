@@ -1,7 +1,6 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
-#include "Robot.h"
 #include "RobotInstruction.h"
-
+#include "Robot.h"
 URobotInstruction::URobotInstruction()
 {
 
@@ -9,5 +8,6 @@ URobotInstruction::URobotInstruction()
 
 bool URobotInstruction::ExecuteInstruction()
 {
-	return true;
+	return BP_ExecuteInstruction();
 }
+
